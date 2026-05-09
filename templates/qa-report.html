@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{project_name}} QA Report</title>
+  <style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#111827}main{max-width:960px;margin:auto;padding:32px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d1d5db;padding:8px;text-align:left}</style>
+</head>
+<body>
+  <main>
+    <h1>QA Report</h1>
+    <p><strong>Result:</strong> {{qa_result}}</p>
+    <table>
+      <thead><tr><th>Area</th><th>Findings</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Visual fidelity</td><td>{{visual_findings}}</td><td>{{visual_status}}</td></tr>
+        <tr><td>Responsive</td><td>{{responsive_findings}}</td><td>{{responsive_status}}</td></tr>
+        <tr><td>Accessibility</td><td>{{accessibility_findings}}</td><td>{{accessibility_status}}</td></tr>
+        <tr><td>Performance</td><td>{{performance_findings}}</td><td>{{performance_status}}</td></tr>
+        <tr><td>Elementor best practices</td><td>{{elementor_findings}}</td><td>{{elementor_status}}</td></tr>
+      </tbody>
+    </table>
+    <section>
+      <h2>Open Issues</h2>
+      <div>{{open_issues}}</div>
+    </section>
+  </main>
+</body>
+</html>

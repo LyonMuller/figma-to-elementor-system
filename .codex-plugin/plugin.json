@@ -1,0 +1,43 @@
+{
+  "name": "figma-to-elementor-system",
+  "version": "0.1.0",
+  "description": "Codex workflow system for converting Figma designs into Elementor design systems, pages, templates, containers, widgets, assets, responsive rules, and HTML reports.",
+  "author": {
+    "name": "Lyon",
+    "url": "https://developers.openai.com/codex/plugins"
+  },
+  "homepage": "https://developers.openai.com/codex/plugins",
+  "repository": "https://github.com/codigodoleo/superpowers-sage",
+  "license": "MIT",
+  "keywords": [
+    "figma",
+    "elementor",
+    "wordpress",
+    "design-system",
+    "mcp",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Figma to Elementor System",
+    "shortDescription": "Convert Figma designs into professional Elementor systems.",
+    "longDescription": "A modular Codex workflow that analyzes Figma designs, builds a normalized design system, maps structures to Elementor, creates or updates Elementor drafts through MCP, optimizes assets, validates responsiveness, and produces HTML documentation.",
+    "developerName": "Lyon",
+    "category": "Design",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ],
+    "websiteURL": "https://developers.openai.com/codex/plugins",
+    "privacyPolicyURL": "https://openai.com/policies/row-privacy-policy/",
+    "termsOfServiceURL": "https://openai.com/policies/row-terms-of-use/",
+    "defaultPrompt": [
+      "Convert this Figma frame into an Elementor draft",
+      "Build an Elementor design system from this Figma file",
+      "Review a Figma to Elementor conversion plan"
+    ],
+    "brandColor": "#6F4EF2",
+    "screenshots": []
+  }
+}

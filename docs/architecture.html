@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architecture</title>
+  <style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#111827}main{max-width:960px;margin:auto;padding:32px}code{background:#f3f4f6;padding:.1rem .3rem;border-radius:4px}</style>
+</head>
+<body>
+  <main>
+    <h1>Architecture</h1>
+    <p>The plugin is an installable Codex workflow package. It contains a light orchestrator skill plus focused subskills with single responsibilities.</p>
+    <h2>Core Components</h2>
+    <ul>
+      <li><code>figma-to-elementor-system</code>: validates inputs, environment, scope, safety rules, and phase order.</li>
+      <li><code>figma-analyzer</code>: reads Figma context, variables, screenshots, metadata, components, variants, and assets.</li>
+      <li><code>design-system-builder</code>: normalizes Figma values into Elementor-friendly tokens.</li>
+      <li><code>elementor-mapper</code>: maps Figma structures to Elementor pages, templates, containers, widgets, and responsive rules.</li>
+      <li><code>elementor-builder</code>: executes verified Elementor MCP operations.</li>
+      <li><code>asset-optimizer</code>, <code>responsive-specialist</code>, <code>qa-reviewer</code>, and <code>html-documentation-writer</code>: handle specialized follow-up phases.</li>
+    </ul>
+    <h2>Data Flow</h2>
+    <p>All subskills exchange state through the internal JSON contract in <code>contracts/internal-data-contract.json</code>. The contract is append-only by default: phases add findings, actions, warnings, and QA results rather than replacing prior context.</p>
+  </main>
+</body>
+</html>

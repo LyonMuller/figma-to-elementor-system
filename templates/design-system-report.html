@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{project_name}} Design System Report</title>
+  <style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#111827}main{max-width:960px;margin:auto;padding:32px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d1d5db;padding:8px;text-align:left}</style>
+</head>
+<body>
+  <main>
+    <h1>Design System Report</h1>
+    <p><strong>Project:</strong> {{project_name}}</p>
+    <p><strong>Figma source:</strong> {{figma_url}}</p>
+    <section>
+      <h2>Global Colors</h2>
+      <table><thead><tr><th>Name</th><th>Value</th><th>Elementor role</th></tr></thead><tbody>{{global_colors_rows}}</tbody></table>
+    </section>
+    <section>
+      <h2>Global Typography</h2>
+      <table><thead><tr><th>Name</th><th>Family</th><th>Size</th><th>Weight</th><th>Line height</th></tr></thead><tbody>{{global_typography_rows}}</tbody></table>
+    </section>
+    <section>
+      <h2>Spacing, Radius, Shadows, and Grids</h2>
+      <div>{{layout_tokens}}</div>
+    </section>
+  </main>
+</body>
+</html>

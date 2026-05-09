@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical Decisions</title>
+  <style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#111827}main{max-width:960px;margin:auto;padding:32px}code{background:#f3f4f6;padding:.1rem .3rem;border-radius:4px}</style>
+</head>
+<body>
+  <main>
+    <h1>Technical Decisions Report</h1>
+    <section>
+      <h2>Codex Manifest</h2>
+      <p>The plugin uses <code>.codex-plugin/plugin.json</code> instead of a root <code>plugin.json</code> because current Codex plugin documentation and the local <code>plugin-creator</code> reference identify that path as the required entrypoint.</p>
+    </section>
+    <section>
+      <h2>MCP Configuration</h2>
+      <p>Figma MCP and Elementor MCP remain external configuration. This prevents secrets, WordPress application passwords, OAuth tokens, local endpoints, and site-specific settings from being packaged into the plugin.</p>
+    </section>
+    <section>
+      <h2>Verified Tool Families</h2>
+      <p>Figma MCP documentation confirms design context, variable definitions, screenshots, and metadata tools. Elementor MCP documentation confirms global settings, page management, layout, widgets, templates, composite page building, assets, SVG icons, and custom code capabilities.</p>
+    </section>
+    <section>
+      <h2>Environment Dependencies</h2>
+      <p>Actual Elementor tool names, widget schemas, permissions, Elementor Pro availability, and target-site publication rules must be verified in the local environment before each implementation run.</p>
+    </section>
+  </main>
+</body>
+</html>

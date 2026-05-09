@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Figma MCP Contract</title>
+  <style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#111827}main{max-width:960px;margin:auto;padding:32px}code{background:#f3f4f6;padding:.1rem .3rem;border-radius:4px}</style>
+</head>
+<body>
+  <main>
+    <h1>Figma MCP Contract</h1>
+    <p>The plugin expects an externally configured Figma MCP server. It does not bundle OAuth tokens or server configuration.</p>
+    <h2>Verified Tool Expectations</h2>
+    <ul>
+      <li><code>get_design_context</code>: primary source for layout, visual, typography, component, and token context.</li>
+      <li><code>get_variable_defs</code>: source for variable and style values.</li>
+      <li><code>get_screenshot</code>: visual reference for fidelity checks.</li>
+      <li><code>get_metadata</code>: sparse structure fallback for large or truncated designs.</li>
+    </ul>
+    <h2>Rules</h2>
+    <p>Figma MCP output may look like React and Tailwind. Treat it as structured design context, not production Elementor code.</p>
+  </main>
+</body>
+</html>

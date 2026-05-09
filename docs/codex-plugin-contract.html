@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Plugin Contract</title>
+  <style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#111827}main{max-width:960px;margin:auto;padding:32px}code{background:#f3f4f6;padding:.1rem .3rem;border-radius:4px}</style>
+</head>
+<body>
+  <main>
+    <h1>Codex Plugin Contract</h1>
+    <p>The plugin uses the official Codex plugin shape with <code>.codex-plugin/plugin.json</code> as the required entrypoint. The manifest points to <code>./skills/</code> and does not include active MCP server configuration.</p>
+    <h2>Discovery</h2>
+    <p>Codex discovers each skill as a directory containing a <code>SKILL.md</code> file with <code>name</code> and <code>description</code> frontmatter.</p>
+    <h2>Marketplace</h2>
+    <p>The home-local marketplace entry points to <code>./plugins/figma-to-elementor-system</code>, uses installation policy <code>AVAILABLE</code>, authentication policy <code>ON_INSTALL</code>, and category <code>Design</code>.</p>
+  </main>
+</body>
+</html>

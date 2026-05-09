@@ -1,0 +1,54 @@
+{
+  "project": {
+    "name": "",
+    "figma_url": "",
+    "figma_node": "",
+    "target_site": "",
+    "scope": "design_system | page | template | full_site"
+  },
+  "figma_analysis": {
+    "frames": [],
+    "nodes": [],
+    "components": [],
+    "variants": [],
+    "color_styles": [],
+    "text_styles": [],
+    "layout_patterns": [],
+    "assets": [],
+    "effects": []
+  },
+  "design_system": {
+    "colors": [],
+    "typography": [],
+    "spacing": [],
+    "radius": [],
+    "shadows": [],
+    "grids": [],
+    "component_tokens": []
+  },
+  "elementor_mapping": {
+    "global_colors": [],
+    "global_fonts": [],
+    "theme_style": {},
+    "pages": [],
+    "templates": [],
+    "containers": [],
+    "widgets": [],
+    "responsive_rules": []
+  },
+  "implementation": {
+    "actions": [],
+    "created_items": [],
+    "updated_items": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "qa": {
+    "visual": [],
+    "responsive": [],
+    "accessibility": [],
+    "performance": [],
+    "elementor_best_practices": [],
+    "open_issues": []
+  }
+}
