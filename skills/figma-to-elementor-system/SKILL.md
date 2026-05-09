@@ -11,6 +11,8 @@ Use this skill to transform Figma designs into Elementor-ready design systems, p
 
 This skill is intentionally light. It coordinates specialized subskills and keeps the workflow ordered, auditable, and safe.
 
+For new projects or unclear requests, start with `../project-starter/SKILL.md` before running the full conversion workflow.
+
 ## Hard Rules
 
 - Build the design system before creating or updating pages, templates, containers, or widgets.
@@ -35,28 +37,30 @@ Collect or derive:
 
 Run the workflow in this order. Before each phase, read the relevant subskill instructions:
 
-1. `../figma-analyzer/SKILL.md`
-2. `../design-system-builder/SKILL.md`
-3. `../elementor-mapper/SKILL.md`
-4. `../asset-optimizer/SKILL.md` when assets are present
-5. `../elementor-builder/SKILL.md`
-6. `../responsive-specialist/SKILL.md`
-7. `../qa-reviewer/SKILL.md`
-8. `../html-documentation-writer/SKILL.md`
+1. `../project-starter/SKILL.md` for new projects, unclear requests, or missing intake details
+2. `../figma-analyzer/SKILL.md`
+3. `../design-system-builder/SKILL.md`
+4. `../elementor-mapper/SKILL.md`
+5. `../asset-optimizer/SKILL.md` when assets are present
+6. `../elementor-builder/SKILL.md`
+7. `../responsive-specialist/SKILL.md`
+8. `../qa-reviewer/SKILL.md`
+9. `../html-documentation-writer/SKILL.md`
 
 ## Workflow
 
-1. Validate that Figma MCP and Elementor MCP are configured in the active environment. If a server or tool is missing, stop implementation and generate an HTML blocking report.
-2. Parse Figma URLs carefully. Convert URL node IDs like `1-2` to MCP node IDs like `1:2` when the active Figma tool requires colon format.
-3. Initialize the internal JSON contract from `../../contracts/internal-data-contract.json`.
-4. Analyze the Figma source and store design context, screenshot references, variables, styles, metadata, components, layout patterns, and assets in `figma_analysis`.
-5. Normalize the Elementor design system in `design_system`.
-6. Map Figma structures to Elementor global settings, pages, templates, containers, widgets, and responsive rules in `elementor_mapping`.
-7. Optimize and organize assets before Elementor construction.
-8. Create or update Elementor global colors, global typography, theme style, drafts, templates, containers, widgets, and responsive settings through verified Elementor MCP tools.
-9. Validate desktop, tablet, and mobile behavior.
-10. Run QA against visual fidelity, design system consistency, Elementor best practices, accessibility, performance, semantic headings, and style duplication.
-11. Generate final HTML reports using templates in `../../templates/`.
+1. Use the project starter when the request needs intake, scoping, defaults, or blocker discovery.
+2. Validate that Figma MCP and Elementor MCP are configured in the active environment. If a server or tool is missing, stop implementation and generate an HTML blocking report.
+3. Parse Figma URLs carefully. Convert URL node IDs like `1-2` to MCP node IDs like `1:2` when the active Figma tool requires colon format.
+4. Initialize the internal JSON contract from `../../contracts/internal-data-contract.json`.
+5. Analyze the Figma source and store design context, screenshot references, variables, styles, metadata, components, layout patterns, and assets in `figma_analysis`.
+6. Normalize the Elementor design system in `design_system`.
+7. Map Figma structures to Elementor global settings, pages, templates, containers, widgets, and responsive rules in `elementor_mapping`.
+8. Optimize and organize assets before Elementor construction.
+9. Create or update Elementor global colors, global typography, theme style, drafts, templates, containers, widgets, and responsive settings through verified Elementor MCP tools.
+10. Validate desktop, tablet, and mobile behavior.
+11. Run QA against visual fidelity, design system consistency, Elementor best practices, accessibility, performance, semantic headings, and style duplication.
+12. Generate final HTML reports using templates in `../../templates/`.
 
 ## Blocking Conditions
 
