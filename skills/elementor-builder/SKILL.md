@@ -40,6 +40,8 @@ Use actual tool availability from the active Elementor MCP server. Expected tool
 
 - Apply global colors and fonts before page construction.
 - Add root containers with semantic `html_tag` values where supported.
+- Reject fixed `width` or `height` settings on containers before creating or updating them. Replace them with responsive controls such as flex settings, gap, padding, alignment, `width: 100%`, breakpoint-specific values, `max-width`, or `min-height` where appropriate.
+- Do not apply rigid container dimensions only to match a desktop Figma frame pixel-for-pixel.
 - Add widgets with verified widget settings.
 - Use batch update only when each operation is known and reversible.
 - Record all created, updated, skipped, and warning items.

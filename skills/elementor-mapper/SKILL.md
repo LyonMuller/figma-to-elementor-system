@@ -36,10 +36,11 @@ Before finalizing a mapping, inspect the available Elementor MCP tools and schem
 
 - Prefer containers over legacy section/column structures.
 - Avoid excessive nesting; flatten where Figma grouping is purely organizational.
+- Do not copy fixed Figma dimensions into Elementor container `width` or `height` settings. Build containers with responsive flow instead: flex direction, gap, padding, alignment, `width: 100%`, breakpoint controls, and `max-width` or `min-height` only when they support the responsive intent.
 - Preserve semantic heading hierarchy.
 - Use Global Colors and Global Fonts wherever possible.
 - Use custom CSS only for gaps that native Elementor controls cannot express.
-- Document every unavoidable deviation.
+- Document every unavoidable deviation, including any dimension constraint that cannot be expressed without `max-width`, `min-height`, or breakpoint-specific responsive rules.
 
 ## Output
 
