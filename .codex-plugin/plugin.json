@@ -1,6 +1,6 @@
 {
   "name": "figma-to-elementor-system",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Codex workflow system for converting Figma designs into Elementor design systems, pages, templates, containers, widgets, assets, responsive rules, and HTML reports.",
   "author": {
     "name": "Lyon Müller",
@@ -22,7 +22,7 @@
     "displayName": "Figma to Elementor System",
     "shortDescription": "Convert Figma designs into professional Elementor systems.",
     "longDescription": "A modular Codex workflow that analyzes Figma designs, builds a normalized design system, maps structures to Elementor, creates or updates Elementor drafts through MCP, optimizes assets, validates responsiveness, and produces HTML documentation.",
-    "developerName": "Lyon",
+    "developerName": "Lyon Muller",
     "category": "Design",
     "capabilities": [
       "Read",
