@@ -23,7 +23,9 @@ Prepare Figma assets for WordPress and Elementor while preserving quality, acces
 ## Elementor Usage
 
 - Use Image widgets for content images.
-- Use background images only when the image is decorative or structurally tied to a container.
+- Use background images only when the image is decorative or structurally tied to an already justified container.
+- Do not create an extra container only to hold a background image when an Image widget or existing semantic container is more maintainable.
+- Do not use CSS classes, inline CSS, or external CSS to position assets without explicit user approval.
 - Use Icon widgets or uploaded SVG icons for icons.
 - Add alt text for meaningful images and mark decorative imagery as decorative where Elementor supports it.
 

@@ -13,13 +13,21 @@
     <h2>Expected Capabilities</h2>
     <ul>
       <li>Read global settings, pages, templates, widgets, page structure, container schema, and widget schema.</li>
-      <li>Update global colors and global typography.</li>
+      <li>Read existing Global Colors, Global Fonts, Theme Style, responsive controls, and representative clean Elementor structures before mapping or building.</li>
+      <li>Update global colors and global typography only when the user explicitly authorizes global changes.</li>
       <li>Create draft pages and templates.</li>
       <li>Add and update containers and widgets.</li>
       <li>Save reusable templates when supported.</li>
     </ul>
+    <h2>Layout Contract</h2>
+    <ul>
+      <li>Create containers only for shared layout behavior, responsive control, semantic grouping, reuse, or native Elementor settings that cannot be applied directly to a child widget.</li>
+      <li>Do not mirror every Figma frame or group as an Elementor container.</li>
+      <li>Prefer native controls, existing globals, responsive breakpoints, and rem-capable unit controls before any exception path.</li>
+      <li>Record divergences when Elementor cannot express a Figma detail with native controls and existing globals.</li>
+    </ul>
     <h2>Permission Rule</h2>
-    <p>Publishing, deletion, custom code snippets, and destructive content replacement require explicit user authorization.</p>
+    <p>Publishing, deletion, custom code snippets, custom CSS, new globals, hardcoded style values, and destructive content replacement require explicit user authorization.</p>
   </main>
 </body>
 </html>

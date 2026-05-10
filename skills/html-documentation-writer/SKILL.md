@@ -16,6 +16,10 @@ Generate all operational documentation and final reports as valid HTML.
 - Escape user-provided values before embedding them in HTML.
 - Do not include credentials, tokens, application passwords, auth headers, private endpoints, or large raw payloads.
 - Include timestamps, scope, source Figma node, target site, actions, warnings, QA issues, and next steps.
+- Include Elementor MCP observations for existing globals, schemas, representative structure, and any limits that affected the build.
+- Document divergences instead of hiding them when Figma values require unapproved CSS, hardcoded colors, new globals, rigid widths, or extra containers.
+- Report any custom CSS only when it was explicitly approved by the user; otherwise report it as a blocked or skipped requirement.
+- Summarize container-count decisions, global color/font mapping, `rem` usage, and responsive validation in final reports.
 - Link relative documentation files when possible.
 
 ## Templates

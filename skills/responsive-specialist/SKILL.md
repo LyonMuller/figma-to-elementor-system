@@ -16,6 +16,12 @@ Adapt Figma layouts to Elementor responsive behavior across desktop, tablet, and
 - Avoid duplicating entire sections for responsiveness unless there is no maintainable alternative.
 - Prevent text overflow, overlapping widgets, unstable container heights, and layout shifts.
 - Ensure containers use responsive flow instead of fixed `width` or `height` values.
+- Keep the container tree as shallow as possible. Do not add wrappers only to solve breakpoint issues when native controls on the existing container or widget can solve them.
+- Use `rem` for padding, margin, gap, radius, and font size when Elementor responsive controls allow unit selection.
+- Prefer `100%`, `auto`, native wrapping, breakpoint-specific direction, and alignment controls over fixed pixel widths.
+- Document Elementor controls that only accept `px`; do not add custom CSS only to replace those units.
+- Use only existing Global Colors and Global Fonts when responsive states need style changes.
+- Do not introduce custom CSS, custom classes, IDs, duplicated sections, or hidden parallel layouts without explicit user approval and a documented maintenance reason.
 - Keep tap targets usable on mobile.
 - Preserve semantic order when changing visual order.
 - For headers, keep the logo, primary navigation, CTA, and utility items in a predictable semantic order even when the visual layout changes.
@@ -31,7 +37,10 @@ Adapt Figma layouts to Elementor responsive behavior across desktop, tablet, and
 - Mobile layout stacks predictably, keeps headings readable, and avoids horizontal scroll.
 - Containers do not create horizontal scroll at any breakpoint.
 - Desktop, tablet, and mobile layouts rely on responsive flow rather than fixed container width or height.
+- Container count is justified by shared layout behavior, semantic grouping, responsive control, or native Elementor settings.
 - Any container `max-width` or `min-height` remains intentional, responsive, and valid for each breakpoint.
+- Spacing and type values use `rem` where Elementor supports it.
+- No responsive fix depends on unapproved custom CSS, hardcoded colors, or rigid widths.
 - Images keep meaningful crop and aspect ratio.
 - Buttons and interactive elements remain accessible.
 - Header desktop layout keeps nav alignment, logo scale, CTA placement, and sticky state consistent with the reference.

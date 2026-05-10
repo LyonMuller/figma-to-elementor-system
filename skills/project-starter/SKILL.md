@@ -29,6 +29,8 @@ Collect or derive:
 - Project scope: `design_system`, `page`, `template`, or `full_site`.
 - Publication preference. Default to `draft` when not explicit.
 - Elementor constraints: free/pro availability, theme builder needs, dynamic tags, reusable templates, custom widgets, or existing globals.
+- Existing Global Colors and Global Fonts are required for style mapping; if they cannot be read through Elementor MCP, record a blocker.
+- Custom CSS approval status. Default to no custom CSS unless the user explicitly approves it in the current conversation.
 - Delivery expectations: draft page/template IDs, design system summary, assets, QA report, final HTML report, or implementation plan only.
 - Quality constraints: responsive breakpoints, accessibility, SEO, performance, tracking, analytics, multilingual, forms, WooCommerce, or animation needs.
 
@@ -41,10 +43,13 @@ Collect or derive:
 5. Set conservative defaults:
    - publication: `draft`;
    - scope: `page` when a single frame/page is provided;
-   - custom CSS: avoid unless required;
+   - custom CSS: not approved unless explicitly approved by the user;
+   - styling: use existing Elementor Global Colors and Global Fonts only;
+   - layout: use the smallest maintainable container tree;
+   - units: prefer `rem` where Elementor controls support unit selection;
    - assets: optimize before Elementor construction when media is present;
    - documentation: generate HTML reports.
-6. Flag risks early, especially missing MCP access, unknown target site, Pro-only Elementor requirements, very large Figma frames, unclear responsive behavior, or publishing requests.
+6. Flag risks early, especially missing MCP access, unreadable Elementor globals, unknown target site, Pro-only Elementor requirements, very large Figma frames, unclear responsive behavior, custom CSS requests, hardcoded Figma colors, rigid desktop layouts, or publishing requests.
 7. Produce a project brief and pass it to `../figma-to-elementor-system/SKILL.md`.
 
 ## Output

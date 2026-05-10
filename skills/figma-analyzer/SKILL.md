@@ -17,13 +17,16 @@ Read the Figma source through MCP and populate `figma_analysis` in the internal 
 4. Call `get_screenshot` for the same target to preserve a visual reference.
 5. If the design is too large, call `get_metadata`, identify major child nodes, then fetch each major node with `get_design_context`.
 6. Capture components, instances, variants, layout direction, sizing, constraints, text styles, color styles, effects, grids, images, icons, and hierarchy.
-7. Record uncertainty explicitly in `implementation.warnings`.
+7. Separate visual hierarchy from Figma layer organization. Mark groups that appear purely organizational so later phases can flatten them instead of creating unnecessary Elementor containers.
+8. Record fixed dimensions, absolute positioning, raw colors, and one-off style values as analysis notes, not as implementation requirements.
+9. Record uncertainty explicitly in `implementation.warnings`.
 
 ## Figma Data Rules
 
 - Treat React/Tailwind-like output from Figma MCP as design context, not final implementation code.
 - Prefer Figma variables and styles over raw visual values when both are available.
 - Keep screenshots as validation references.
+- Treat raw colors, fixed pixel dimensions, and desktop-only spacing as signals to map or validate, not values to copy into Elementor.
 - Do not hallucinate missing nodes, variant axes, or asset sources.
 - If asset URLs are returned by the MCP server, preserve the source URL and intended use.
 

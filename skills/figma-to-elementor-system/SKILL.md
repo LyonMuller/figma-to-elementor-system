@@ -16,11 +16,16 @@ For new projects or unclear requests, start with `../project-starter/SKILL.md` b
 ## Hard Rules
 
 - Build the design system before creating or updating pages, templates, containers, or widgets.
+- Consult Elementor MCP for existing Global Colors, Global Fonts, Theme Style, page/template structure, widget availability, container schema, and widget schemas before mapping or building.
 - Never publish Elementor content unless the user explicitly authorizes publishing in the current conversation.
 - Default all Elementor page/template creation to draft or equivalent non-public status.
-- Prefer native Elementor controls, Global Colors, Global Fonts, Theme Style, Containers/Flexbox, widgets, templates, and reusable structures before custom HTML/CSS.
-- For header, footer, and global widget styling used across the site, prefer the active theme CSS file or equivalent theme asset pipeline before Elementor custom CSS.
-- Use custom CSS only when a native control cannot express the requirement; respect global variables/tokens, use `rem`, use CSS Nesting where the project supports it, and avoid `!important` unless the need is documented.
+- Use native Elementor controls, existing Global Colors, existing Global Fonts, Theme Style, Containers/Flexbox, widgets, templates, and reusable structures as the default implementation surface.
+- Do not use custom CSS, inline CSS, CSS classes, IDs, custom code snippets, or external CSS as a standard layout or styling solution.
+- Use custom CSS only after explicit user approval in the current conversation. If Elementor native controls cannot express a Figma detail, record the divergence and ask for approval instead of inventing CSS.
+- Do not create new Global Colors or Global Fonts from Figma values during normal conversion. Recommend additions when needed, but map only to existing Elementor globals unless the user explicitly authorizes global updates.
+- Create the smallest Elementor structure that preserves semantic grouping, responsive control, and maintainability.
+- Prefer `rem` for spacing, typography, radius, and gaps when Elementor controls allow unit selection. Document controls that only accept `px`; do not add CSS to bypass that limitation.
+- Do not apply hardcoded colors, hex/RGBA values, invented tokens, rigid widths, or fixed dimensions only to match a desktop Figma frame.
 - Do not invent MCP tools, Elementor setting names, widget schemas, Figma node IDs, or unpublished APIs. Inspect available tools and schemas first.
 - Do not copy secrets, application passwords, MCP auth headers, tokens, or private endpoints into plugin files or reports.
 - Produce operational documentation and final reports in valid HTML. Markdown is allowed only for `SKILL.md`.
@@ -56,13 +61,14 @@ Run the workflow in this order. Before each phase, read the relevant subskill in
 3. Parse Figma URLs carefully. Convert URL node IDs like `1-2` to MCP node IDs like `1:2` when the active Figma tool requires colon format.
 4. Initialize the internal JSON contract from `../../contracts/internal-data-contract.json`.
 5. Analyze the Figma source and store design context, screenshot references, variables, styles, metadata, components, layout patterns, and assets in `figma_analysis`.
-6. Normalize the Elementor design system in `design_system`.
-7. Map Figma structures to Elementor global settings, pages, templates, containers, widgets, and responsive rules in `elementor_mapping`.
-8. Optimize and organize assets before Elementor construction.
-9. Create or update Elementor global colors, global typography, theme style, drafts, templates, containers, widgets, and responsive settings through verified Elementor MCP tools.
-10. Validate desktop, tablet, and mobile behavior.
-11. Run QA against visual fidelity, design system consistency, Elementor best practices, accessibility, performance, semantic headings, and style duplication.
-12. Generate final HTML reports using templates in `../../templates/`.
+6. Read existing Elementor globals, schemas, widgets, and representative page/template structures through Elementor MCP.
+7. Normalize the Figma design system against existing Elementor globals in `design_system`; record unmatched Figma values as divergences or recommendations.
+8. Map visual hierarchy into the smallest maintainable Elementor tree in `elementor_mapping`; separate structure, content, and style before creating containers.
+9. Optimize and organize assets before Elementor construction.
+10. Create or update Elementor drafts, templates, containers, widgets, and responsive settings through verified Elementor MCP tools.
+11. Validate desktop, tablet, and mobile behavior.
+12. Run QA against visual fidelity, design system consistency, Elementor best practices, accessibility, performance, semantic headings, custom CSS approval, global color/font usage, and style duplication.
+13. Generate final HTML reports using templates in `../../templates/`.
 
 ## Blocking Conditions
 
@@ -73,6 +79,8 @@ Stop and report in HTML when:
 - Required Elementor capabilities are unavailable, such as Pro-only templates for a requested Theme Builder workflow.
 - The requested action would publish content without explicit authorization.
 - Widget schemas or container settings cannot be verified for the intended build.
+- Existing Elementor Global Colors or Global Fonts cannot be read.
+- The requested visual result requires custom CSS and the user has not explicitly approved that exception.
 - The Figma frame is too large and cannot be decomposed with metadata and child-node fetches.
 
 ## Output

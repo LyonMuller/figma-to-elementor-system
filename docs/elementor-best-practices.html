@@ -10,13 +10,16 @@
   <main>
     <h1>Elementor Best Practices</h1>
     <ul>
-      <li>Use Global Colors and Global Fonts before local styles.</li>
+      <li>Read existing Elementor Global Colors, Global Fonts, Theme Style, widget schemas, container schema, and representative page/template structures before mapping or building.</li>
+      <li>Use only existing Global Colors and Global Fonts unless the user explicitly authorizes new globals.</li>
       <li>Use Containers/Flexbox as the structural default.</li>
-      <li>Avoid unnecessary nested containers.</li>
-      <li>Avoid fixed width or height values on containers; use responsive flow, max-width, min-height, and breakpoint controls when needed.</li>
-      <li>Use native widgets before custom HTML or CSS.</li>
-      <li>For header, footer, and global widgets used across the site, prefer the active theme CSS file before Elementor custom CSS.</li>
-      <li>When custom CSS is unavoidable, respect global variables, use rem units, use CSS Nesting where supported, and avoid !important unless documented.</li>
+      <li>Create containers only for shared layout behavior, responsive control, semantic grouping, reuse, or native Elementor settings that cannot be applied directly to a child widget.</li>
+      <li>Avoid unnecessary nested containers, one-widget wrappers, spacer containers, and Figma group mirroring.</li>
+      <li>Avoid fixed width or height values on containers; use responsive flow, width 100%, auto, max-width, min-height, and breakpoint controls only when needed.</li>
+      <li>Use native widgets and native controls before considering any custom code.</li>
+      <li>Do not use custom CSS, inline CSS, custom classes, IDs, or external stylesheets unless explicitly approved by the user.</li>
+      <li>Prefer rem units for padding, margin, gap, border radius, font size, and general spacing where Elementor controls allow unit selection.</li>
+      <li>Do not hardcode hex, RGBA, sampled Figma colors, invented tokens, or rigid pixel widths.</li>
       <li>Keep heading semantics aligned with the page outline.</li>
       <li>Use responsive controls rather than duplicating sections.</li>
       <li>Keep assets optimized and avoid layout shifts.</li>

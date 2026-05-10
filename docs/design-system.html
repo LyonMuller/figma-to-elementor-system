@@ -9,7 +9,7 @@
 <body>
   <main>
     <h1>Design System</h1>
-    <p>The design system phase converts Figma variables, styles, and repeated values into Elementor-compatible global tokens.</p>
+    <p>The design system phase maps Figma variables, styles, and repeated values to existing Elementor globals before any page or template build.</p>
     <h2>Required Groups</h2>
     <ul>
       <li>Colors: primary, secondary, accent, neutral, semantic, text, background, and border.</li>
@@ -17,7 +17,8 @@
       <li>Layout: spacing, radius, shadows, grids, and component-level tokens.</li>
     </ul>
     <h2>Elementor Mapping</h2>
-    <p>Elementor's default global roles are Primary, Secondary, Text, and Accent. Additional tokens should be created only when they are reusable and meaningful.</p>
+    <p>Elementor's default global roles are Primary, Secondary, Text, and Accent. Additional globals should be recommended only when they are reusable, meaningful, unavailable in the current Elementor kit, and explicitly approved before implementation.</p>
+    <p>Do not apply hardcoded colors, RGBA values, sampled Figma colors, invented tokens, or raw font values to Elementor settings.</p>
   </main>
 </body>
 </html>

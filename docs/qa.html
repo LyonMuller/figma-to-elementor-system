@@ -10,17 +10,20 @@
   <main>
     <h1>QA Checklist</h1>
     <ul>
-      <li>Figma screenshot and Elementor output visually match.</li>
-      <li>Global Colors and Global Fonts are used consistently.</li>
-      <li>Containers are semantic and not excessively nested.</li>
+      <li>Figma screenshot and Elementor output visually match without sacrificing native Elementor maintainability.</li>
+      <li>Existing Global Colors and Global Fonts are used consistently.</li>
+      <li>No hardcoded hex, RGBA, sampled colors, invented tokens, or unauthorized new globals are present.</li>
+      <li>Containers are semantic, shallow, and justified by layout, responsive behavior, reuse, or native Elementor control needs.</li>
+      <li>No containers are used only as spacers, one-widget wrappers, Navigator organization, CSS substitutes, or Figma group mirrors.</li>
       <li>Headings follow a coherent document outline.</li>
       <li>Desktop, tablet, and mobile layouts are stable.</li>
+      <li>Spacing, typography, radius, and gaps use rem where Elementor controls support unit selection.</li>
+      <li>No rigid fixed widths or desktop-only dimensions harm responsiveness.</li>
       <li>Images have appropriate alt text or decorative treatment.</li>
       <li>Color contrast, tap targets, and focus states are acceptable.</li>
       <li>Assets are optimized and no unnecessary scripts were added.</li>
-      <li>Custom CSS is minimal, documented, and not duplicative.</li>
-      <li>Header, footer, and global widget styling uses theme CSS instead of unnecessary Elementor custom CSS.</li>
-      <li>Custom CSS respects global variables, uses rem units, follows supported CSS Nesting, and avoids unjustified !important declarations.</li>
+      <li>No custom CSS, inline CSS, custom classes, IDs, external stylesheets, or custom code snippets were used without explicit user approval.</li>
+      <li>Unmapped Figma details are recorded as divergences instead of being solved with unapproved CSS.</li>
       <li>No content was published without explicit authorization.</li>
     </ul>
   </main>

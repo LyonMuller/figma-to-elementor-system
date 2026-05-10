@@ -9,8 +9,8 @@ This repository is a workflow package. It does not bundle Figma, WordPress, Elem
 Use this plugin when you need a structured Figma to Elementor workflow that can:
 
 - analyze Figma files, frames, variables, styles, components, screenshots, and assets;
-- normalize design decisions into an Elementor-compatible design system;
-- map Figma structures to Elementor globals, containers, widgets, pages, and templates;
+- normalize design decisions against existing Elementor globals;
+- map Figma structures to Elementor globals, containers, widgets, pages, and templates with the smallest maintainable container tree;
 - create or update Elementor drafts through verified MCP tools;
 - review responsive behavior, accessibility, performance, design fidelity, and Elementor implementation quality;
 - generate operational HTML documentation and QA reports.
@@ -23,12 +23,13 @@ The system is intentionally phase-based:
 2. Validate the requested Figma scope and target WordPress/Elementor site.
 3. Confirm that Figma MCP and Elementor MCP tools are available in the active environment.
 4. Analyze the Figma source and capture design context, variables, metadata, screenshots, layout patterns, and assets.
-5. Build the Elementor-compatible design system before page or template construction.
-6. Map the design to Elementor global settings, pages, templates, containers, widgets, and responsive rules.
-7. Optimize assets when the design requires exported media.
-8. Create or update Elementor content as drafts unless the user explicitly authorizes publishing.
-9. Validate desktop, tablet, and mobile behavior.
-10. Run QA and generate HTML reports.
+5. Read existing Elementor globals, widget schemas, container schema, and representative page/template structures.
+6. Build the Elementor-compatible design system before page or template construction, mapping Figma styles to existing globals.
+7. Map the design to Elementor global settings, pages, templates, containers, widgets, and responsive rules with the fewest containers that preserve semantics and responsive behavior.
+8. Optimize assets when the design requires exported media.
+9. Create or update Elementor content as drafts unless the user explicitly authorizes publishing.
+10. Validate desktop, tablet, and mobile behavior.
+11. Run QA and generate HTML reports.
 
 ## Starting a project
 
@@ -45,7 +46,10 @@ Scope: design_system | page | template | full_site
 Publication: draft only
 Constraints:
 - use Elementor globals where possible
-- avoid custom CSS unless necessary
+- use existing Elementor globals only unless global updates are explicitly approved
+- do not use custom CSS unless explicitly approved
+- use the smallest maintainable container tree
+- prefer rem units where Elementor controls allow them
 - optimize assets
 - validate desktop, tablet, and mobile
 - generate final HTML report
@@ -111,9 +115,12 @@ Do not use external skills to bypass the safety rules, MCP validation, draft-fir
 - Default created or updated Elementor pages and templates to draft or equivalent non-public status.
 - Do not store secrets, credentials, MCP auth data, private endpoints, tokens, or application passwords in plugin files or generated reports.
 - Do not invent MCP tools, Elementor widget schemas, setting names, Figma node IDs, or unpublished APIs. Inspect the active environment first.
-- Prefer native Elementor controls, Global Colors, Global Fonts, Theme Style, Containers/Flexbox, widgets, templates, and reusable structures before custom HTML or CSS.
-- For header, footer, and global widget styling used across the site, prefer the active theme CSS file or equivalent theme asset pipeline before Elementor custom CSS.
-- Use custom CSS only when a native control cannot express the requirement; respect global variables/tokens, use `rem`, use CSS Nesting where the project supports it, and avoid `!important` unless the need is documented.
+- Read existing Elementor Global Colors, Global Fonts, Theme Style, page/template structures, widget schemas, and container schema before mapping or building.
+- Use native Elementor controls, existing Global Colors, existing Global Fonts, Theme Style, Containers/Flexbox, widgets, templates, and reusable structures as the default implementation surface.
+- Create containers only for shared layout behavior, responsive control, semantic grouping, reuse, or native Elementor settings that cannot be applied directly to a child widget.
+- Do not use hardcoded colors, invented tokens, rigid widths, fixed desktop dimensions, or custom CSS as a default solution.
+- Use custom CSS only after explicit user approval in the current conversation; otherwise record the Figma-to-Elementor divergence.
+- Prefer `rem` units for spacing, typography, radius, and gaps where Elementor controls allow unit selection.
 
 ## Documentation format
 
