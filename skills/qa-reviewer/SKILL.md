@@ -21,6 +21,8 @@ Perform final review and decide whether the conversion is acceptable, acceptable
 - Responsive behavior across desktop, tablet, and mobile.
 - Performance: asset weight, DOM depth, unnecessary scripts, layout shifts.
 - Duplicate styles and excessive custom CSS.
+- Whether header, footer, and global widget styling was routed to theme CSS instead of unnecessary Elementor custom CSS.
+- Custom CSS quality: global variables/tokens, `rem`, CSS Nesting where supported, selector scoping with `:where()` or `:is()` where useful, and no unjustified `!important`.
 
 ## Blocking Findings
 
@@ -33,6 +35,8 @@ Block completion when:
 - Mobile layout has overlap or horizontal scroll.
 - Elementor build relies on unverified widget schema.
 - Custom CSS or code snippets introduce unnecessary risk.
+- Header, footer, or global widget changes rely on Elementor custom CSS when theme CSS was available.
+- Custom CSS uses unjustified `!important` or bypasses established global variables/tokens.
 
 ## Output
 

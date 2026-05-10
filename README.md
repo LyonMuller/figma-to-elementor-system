@@ -112,6 +112,8 @@ Do not use external skills to bypass the safety rules, MCP validation, draft-fir
 - Do not store secrets, credentials, MCP auth data, private endpoints, tokens, or application passwords in plugin files or generated reports.
 - Do not invent MCP tools, Elementor widget schemas, setting names, Figma node IDs, or unpublished APIs. Inspect the active environment first.
 - Prefer native Elementor controls, Global Colors, Global Fonts, Theme Style, Containers/Flexbox, widgets, templates, and reusable structures before custom HTML or CSS.
+- For header, footer, and global widget styling used across the site, prefer the active theme CSS file or equivalent theme asset pipeline before Elementor custom CSS.
+- Use custom CSS only when a native control cannot express the requirement; respect global variables/tokens, use `rem`, use CSS Nesting where the project supports it, and avoid `!important` unless the need is documented.
 
 ## Documentation format
 

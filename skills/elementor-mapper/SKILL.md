@@ -40,7 +40,10 @@ Before finalizing a mapping, inspect the available Elementor MCP tools and schem
 - Preserve semantic heading hierarchy.
 - Use Global Colors and Global Fonts wherever possible.
 - Use custom CSS only for gaps that native Elementor controls cannot express.
+- Before mapping custom CSS, classify it as page-local or site-wide. Route site-wide header, footer, and global widget CSS to the active theme CSS file or equivalent theme asset pipeline unless project constraints make that impossible.
+- Custom CSS must respect global variables/tokens, use `rem`, use CSS Nesting where the project supports it, and avoid `!important`. If selector strength is needed, prefer better scoping, `:where()`, or `:is()` before considering `!important`.
 - Document every unavoidable deviation, including any dimension constraint that cannot be expressed without `max-width`, `min-height`, or breakpoint-specific responsive rules.
+- Explicitly document any unavoidable `!important` use and why theme CSS or selector scoping could not solve it.
 
 ## Output
 

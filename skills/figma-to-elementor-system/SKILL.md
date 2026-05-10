@@ -19,6 +19,8 @@ For new projects or unclear requests, start with `../project-starter/SKILL.md` b
 - Never publish Elementor content unless the user explicitly authorizes publishing in the current conversation.
 - Default all Elementor page/template creation to draft or equivalent non-public status.
 - Prefer native Elementor controls, Global Colors, Global Fonts, Theme Style, Containers/Flexbox, widgets, templates, and reusable structures before custom HTML/CSS.
+- For header, footer, and global widget styling used across the site, prefer the active theme CSS file or equivalent theme asset pipeline before Elementor custom CSS.
+- Use custom CSS only when a native control cannot express the requirement; respect global variables/tokens, use `rem`, use CSS Nesting where the project supports it, and avoid `!important` unless the need is documented.
 - Do not invent MCP tools, Elementor setting names, widget schemas, Figma node IDs, or unpublished APIs. Inspect available tools and schemas first.
 - Do not copy secrets, application passwords, MCP auth headers, tokens, or private endpoints into plugin files or reports.
 - Produce operational documentation and final reports in valid HTML. Markdown is allowed only for `SKILL.md`.
